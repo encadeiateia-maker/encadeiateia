@@ -29,6 +29,9 @@ steps:
       - '--min-instances=0'
       - '--max-instances=3'
 
+options:
+  logging: CLOUD_LOGGING_ONLY
+
 images:
   - 'europe-west1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/encadeiateia:$COMMIT_SHA'
   - 'europe-west1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/encadeiateia:latest'
