@@ -1,0 +1,234 @@
+{
+  "hero": {
+    "headline": "Ship AI-native products without hiring a team",
+    "subhead": "Encadeiateia builds and operates web, mobile, and AI systems that normally require a 5–10 person team. One engineer, production-ready platforms, and automation from day one.",
+    "primaryCtaLabel": "Schedule a 30-minute call",
+    "secondaryCtaLabel": "See real projects",
+    "microCopy": "Based in Lisbon, working with SMEs and startups across Europe."
+  },
+  "services": [
+    {
+      "id": "custom-web-mobile-apps",
+      "title": "Custom Web & Mobile Apps",
+      "shortDescription": "From landing pages to full SaaS platforms, I design, build, and run multi-tenant web and mobile apps on a battle-tested stack.",
+      "deliverables": [
+        "Production-ready web apps and high-converting landing pages",
+        "Multi-tenant SaaS platforms with billing, authentication, and roles",
+        "Mobile-friendly frontends and admin dashboards on a shared platform"
+      ],
+      "outcomes": [
+        "Launch new products without assembling a full in-house team",
+        "Reuse a proven platform already powering 18+ live client sites",
+        "Reduce maintenance by centralizing infrastructure and deployments"
+      ],
+      "icon": "LayoutDashboard"
+    },
+    {
+      "id": "ai-workflow-automation",
+      "title": "AI & Workflow Automation",
+      "shortDescription": "I build AI agent systems that orchestrate entire workflows end-to-end, not just chatbots.",
+      "deliverables": [
+        "Multi-agent orchestration pipelines for critical business processes",
+        "n8n and Windmill workflows integrated with your existing tools",
+        "Monitoring dashboards and alerts for automated flows and failures"
+      ],
+      "outcomes": [
+        "Cut repetitive operational work by automating end-to-end processes",
+        "Turn tribal knowledge into codified, reliable workflows",
+        "Ship AI capabilities without maintaining an internal ML team"
+      ],
+      "icon": "Workflow"
+    },
+    {
+      "id": "ai-content-creative",
+      "title": "AI-Powered Content & Creative",
+      "shortDescription": "A local AI production pipeline for images, video, music, and copy, running on your own hardware or private infrastructure.",
+      "deliverables": [
+        "On-prem or private AI studio setup for your creative teams",
+        "Custom image, video, and music generation workflows",
+        "Branded templates and reusable prompt libraries for content production"
+      ],
+      "outcomes": [
+        "Produce content at scale without sending data to third-party clouds",
+        "Keep IP and sensitive assets fully private and GDPR-friendly",
+        "Let marketing teams iterate faster with AI-assisted workflows"
+      ],
+      "icon": "Sparkles"
+    },
+    {
+      "id": "codebase-intelligence",
+      "title": "Codebase Intelligence & Developer Tools",
+      "shortDescription": "I turn complex codebases into interactive learning experiences with architecture diagrams, guided paths, and AI-powered Q&A.",
+      "deliverables": [
+        "Interactive portal for any repository, self-hosted or managed",
+        "Auto-generated architecture diagrams and component maps",
+        "Guided learning paths and AI Q&A across 13+ programming languages"
+      ],
+      "outcomes": [
+        "Onboard new developers in days instead of weeks",
+        "Make audits, due diligence, and handovers understandable and repeatable",
+        "Reduce bus factor by turning code into a living, explorable system"
+      ],
+      "icon": "FileCode2"
+    },
+    {
+      "id": "lead-gen-sales-automation",
+      "title": "Lead Generation & Sales Automation",
+      "shortDescription": "I build multi-tenant lead capture systems with AI scoring, CRM sync, and automated follow-ups.",
+      "deliverables": [
+        "Lead capture forms and micro-sites integrated with your CRM",
+        "AI-based lead scoring and prioritization for inbound opportunities",
+        "Automated email sequences and follow-up workflows"
+      ],
+      "outcomes": [
+        "Focus sales time on high-value leads instead of manual triage",
+        "Never lose track of a lead due to human error or missed reminders",
+        "Gain clear visibility into pipeline health and conversion rates"
+      ],
+      "icon": "Radar"
+    }
+  ],
+  "portfolio": [
+    {
+      "id": "multi-tenant-web-platform",
+      "title": "Multi-tenant Web Platform",
+      "category": "SaaS Platform",
+      "problem": "Agencies and SMEs needed modern websites without managing separate hosting, SSL, and deployments for each client.",
+      "solution": "Built a multi-tenant platform running 18+ client sites with Docker, Traefik, auto-SSL, and a shared React/Next.js stack.",
+      "result": "New client sites go live in hours instead of weeks, with centralized updates and near-zero maintenance per tenant."
+    },
+    {
+      "id": "ai-agent-orchestrator",
+      "title": "AI Agent Orchestrator",
+      "category": "Automation",
+      "problem": "Operations teams relied on scattered scripts and manual steps that did not scale across clients.",
+      "solution": "Developed a Rust-based orchestrator coordinating 10 specialized agents with a real-time monitoring dashboard.",
+      "result": "End-to-end workflows now run autonomously, with humans only handling exceptions surfaced in the dashboard."
+    },
+    {
+      "id": "codebase-analysis-platform",
+      "title": "Codebase Analysis Platform",
+      "category": "DevTools",
+      "problem": "CTOs and auditors struggled to understand large legacy codebases during onboarding and due diligence.",
+      "solution": "Delivered a single-binary platform that ingests repositories in 13 languages and exposes diagrams, guided tours, and AI Q&A.",
+      "result": "Onboarding and technical reviews were reduced from weeks to a few days, with clearer documentation and fewer surprises."
+    },
+    {
+      "id": "freelance-job-intel",
+      "title": "Freelance Job Intelligence System",
+      "category": "AI Systems",
+      "problem": "Freelancers spent too much time scraping platforms, ranking opportunities, and writing proposals manually.",
+      "solution": "Created a system that auto-scrapes job boards, scores opportunities using AI, and drafts tailored proposals for review.",
+      "result": "Users apply to more relevant jobs in less time and see higher response rates from better-targeted proposals."
+    },
+    {
+      "id": "local-ai-creative-studio",
+      "title": "Local AI Creative Studio",
+      "category": "Creative AI",
+      "problem": "A media team needed AI-generated visuals, video, and music without sending assets to external cloud providers.",
+      "solution": "Implemented a fully offline creative studio pipeline for generating and iterating on images, video, and audio.",
+      "result": "The team ships AI-augmented content faster while keeping all assets private and compliant with internal policies."
+    }
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Discovery",
+      "duration": "1–2 days",
+      "bullets": [
+        "Map goals, constraints, and existing tools so we know where AI and automation actually help.",
+        "Define the smallest version of the solution that still delivers real value to your team."
+      ]
+    },
+    {
+      "step": 2,
+      "title": "Architecture & Prototype",
+      "duration": "1 week",
+      "bullets": [
+        "Design the system architecture, data flows, and integration points around your stack.",
+        "Build a clickable or functional prototype so you can validate the direction early."
+      ]
+    },
+    {
+      "step": 3,
+      "title": "Build with AI Agents",
+      "duration": "2–4 weeks",
+      "bullets": [
+        "Implement features using a mix of custom code, AI agents, and automation engines.",
+        "Run tight feedback loops with weekly demos and a transparent backlog."
+      ]
+    },
+    {
+      "step": 4,
+      "title": "Deploy & Monitor",
+      "duration": "Ongoing",
+      "bullets": [
+        "Deploy to production, set up monitoring, logging, and dashboards around real usage.",
+        "Iterate on behavior, fine-tune agents, and handle operations as the system scales."
+      ]
+    }
+  ],
+  "aboutSnippet": {
+    "text": "Encadeiateia is a one-person AI agency in Lisbon focused on building and operating real software products. I work directly with founders and CTOs to ship web, mobile, and AI systems that would normally require a small team. The stack is modern, the tooling is automated, and every service is backed by production platforms I use daily. You get a single technical partner who both builds and runs what we ship."
+  },
+  "contact": {
+    "introText": "Tell me about your project and where you want to be in the next 3–6 months. I'll reply with a clear next step, not a generic sales script.",
+    "fields": [
+      {
+        "name": "name",
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      {
+        "name": "email",
+        "label": "Email",
+        "placeholder": "you@company.com"
+      },
+      {
+        "name": "company",
+        "label": "Company",
+        "placeholder": "Company or project name"
+      },
+      {
+        "name": "role",
+        "label": "Role",
+        "placeholder": "Founder, CTO, lead, etc."
+      },
+      {
+        "name": "budget",
+        "label": "Budget range",
+        "placeholder": "Rough range is enough (e.g. 5k–20k EUR)"
+      },
+      {
+        "name": "projectDescription",
+        "label": "Project description",
+        "placeholder": "What are you trying to build or automate?"
+      }
+    ],
+    "submitLabel": "Send project details"
+  },
+  "footer": {
+    "tagline": "AI-native software, built and operated from Lisbon.",
+    "columns": [
+      {
+        "heading": "Company",
+        "links": ["Home", "About", "Process", "Contact"]
+      },
+      {
+        "heading": "Services",
+        "links": [
+          "Custom Web & Mobile Apps",
+          "AI & Workflow Automation",
+          "AI-Powered Content & Creative",
+          "Codebase Intelligence",
+          "Lead Gen & Sales Automation"
+        ]
+      },
+      {
+        "heading": "Connect",
+        "links": ["LinkedIn", "GitHub", "Email"]
+      }
+    ],
+    "bottomLine": "© Encadeiateia, Lisbon, Portugal."
+  }
+}
