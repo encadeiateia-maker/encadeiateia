@@ -9,8 +9,10 @@ import {
   Globe,
 } from "lucide-react";
 import content from "@/content/site-content.json";
+import { usePageTitle } from "@/app/hooks/usePageTitle";
 
 export function About() {
+  usePageTitle("About");
   const techStack = [
     { category: "Frontend", items: "React, Next.js, Svelte, Angular, Tailwind" },
     { category: "Backend", items: "Rust, Python, Node.js, FastAPI, Axum" },

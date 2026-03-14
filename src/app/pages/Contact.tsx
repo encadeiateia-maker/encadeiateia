@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { MapPin, Mail, ArrowRight } from "lucide-react";
 import content from "@/content/site-content.json";
+import { usePageTitle } from "@/app/hooks/usePageTitle";
 
 export function Contact() {
+  usePageTitle("Contact");
   const [formData, setFormData] = useState<Record<string, string>>(
     Object.fromEntries(content.contact.fields.map((f) => [f.name, ""]))
   );

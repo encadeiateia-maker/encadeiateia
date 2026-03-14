@@ -16,20 +16,27 @@ Public-facing website for **encadeiateia** — an AI, automation, and custom app
 ```
 src/
   main.tsx              — entry point
+  content/
+    site-content.json   — structured content (hero, services, portfolio, process, contact, footer)
   app/
     App.tsx             — RouterProvider wrapper
     routes.ts           — route config with Layout wrapper
+    hooks/
+      usePageTitle.ts   — per-page document title
     components/
-      Layout.tsx        — nav + footer
+      Layout.tsx        — nav + footer (content-driven from JSON)
       ui/               — shadcn/radix components
       figma/            — ImageWithFallback
     pages/
-      Home.tsx          — hero, features, stats, contact form
-      About.tsx         — company story, values, team
-      Showcase.tsx      — portfolio grid
-      Blog.tsx          — blog listing with search
-      BlogPost.tsx      — individual post (mock data)
-      NotFound.tsx      — 404
+      Home.tsx          — hero, services preview, portfolio, process, about snippet
+      Services.tsx      — 5 services with deliverables + outcomes
+      Projects.tsx      — portfolio grid (problem/solution/result)
+      Process.tsx       — 4-step timeline + FAQ
+      About.tsx         — founder story, tech stack, differentiators
+      Contact.tsx       — 6-field lead form with validation
+      Blog.tsx          — blog listing (placeholder)
+      BlogPost.tsx      — individual post (placeholder)
+      NotFound.tsx      — 404 with navigation links
   styles/
     fonts.css, index.css, tailwind.css, theme.css
 ```
@@ -98,14 +105,16 @@ Key sibling projects:
 
 ## Roadmap
 
-1. **Phase 1**: GitHub Actions CI/CD + staging environment
-2. **Phase 2**: Homepage rewrite (real positioning, services, portfolio)
-3. **Phase 3**: Supabase backend (auth, dynamic content, leads)
-4. **Phase 4**: Client portal (project dashboard, file sharing, invoices)
-5. **Phase 5**: Live demos & integration (Codeilus, Forge, Harvestor, AI chat)
+1. **Phase 1**: Cloud Build CI/CD + staging environment ✅
+2. **Phase 2**: Homepage rewrite (real positioning, services, portfolio) ✅
+3. **Phase 3**: Backend + leads (Cloud SQL, API, lead capture pipeline)
+4. **Phase 4**: Client portal (Firebase Auth, project dashboard, file sharing)
+5. **Phase 5**: Intelligence layer (AI chat, live demos, ecosystem integration)
 
 ## Git
 
 - Repo: `git@github.com:encadeiateia-maker/encadeiateia.git`
 - Branch strategy: `main` (prod), `staging` (preview)
-- Deploy: GitHub Actions → Docker → Artifact Registry → Cloud Run
+- Deploy: Cloud Build → Docker → Artifact Registry → Cloud Run
+- Production: https://encadeiateia-z6zcpxzhsq-ew.a.run.app
+- Staging: https://encadeiateia-staging-z6zcpxzhsq-ew.a.run.app

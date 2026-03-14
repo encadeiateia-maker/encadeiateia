@@ -1,8 +1,10 @@
 import { Link } from "react-router";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import content from "@/content/site-content.json";
+import { usePageTitle } from "@/app/hooks/usePageTitle";
 
 export function Projects() {
+  usePageTitle("Projects");
   return (
     <div className="w-full">
       {/* Header */}

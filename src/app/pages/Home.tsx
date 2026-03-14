@@ -10,6 +10,7 @@ import {
   Clock,
 } from "lucide-react";
 import content from "@/content/site-content.json";
+import { usePageTitle } from "@/app/hooks/usePageTitle";
 
 const iconMap: Record<string, React.ElementType> = {
   LayoutDashboard,
@@ -20,6 +21,7 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 export function Home() {
+  usePageTitle();
   return (
     <div className="w-full">
       {/* Hero Section */}

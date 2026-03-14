@@ -1,15 +1,15 @@
 # Project Roadmap
 
 **Product**: Encadeiateia Virtual Agency Platform
-**Last updated**: 2026-03-14
+**Last updated**: 2026-03-15
 
 ---
 
 ## Timeline Overview
 
 ```
-Phase 1 ████░░░░░░░░░░░░░░░░░░░░  CI/CD + Staging
-Phase 2 ░░░░████████░░░░░░░░░░░░░  Homepage Rewrite
+Phase 1 ████████████░░░░░░░░░░░░░  CI/CD + Staging        ✅
+Phase 2 ████████████░░░░░░░░░░░░░  Homepage Rewrite       ✅
 Phase 3 ░░░░░░░░░░░░████████░░░░░  Backend + Leads
 Phase 4 ░░░░░░░░░░░░░░░░░░░░████░  Client Portal
 Phase 5 ░░░░░░░░░░░░░░░░░░░░░░███  Intelligence Layer
@@ -27,20 +27,20 @@ Phase 5 ░░░░░░░░░░░░░░░░░░░░░░██
 
 | # | Task | Status |
 |---|------|--------|
-| 1.1 | Update `cloudbuild.yaml` with resource limits + `:latest` tag | Not started |
-| 1.2 | Create `cloudbuild-staging.yaml` for staging deploys | Not started |
-| 1.3 | Connect Cloud Build to GitHub repository | Not started |
-| 1.4 | Create production trigger (push to `main`) | Not started |
-| 1.5 | Create staging trigger (push to `staging`) | Not started |
-| 1.6 | Create `staging` branch | Not started |
-| 1.7 | Test: push to staging → verify staging Cloud Run service | Not started |
-| 1.8 | Test: push to main → verify production Cloud Run service | Not started |
+| 1.1 | Update `cloudbuild.yaml` with resource limits + `:latest` tag | Done |
+| 1.2 | Create `cloudbuild-staging.yaml` for staging deploys | Done |
+| 1.3 | Connect Cloud Build to GitHub repository | Done |
+| 1.4 | Create production trigger (push to `main`) | Done |
+| 1.5 | Create staging trigger (push to `staging`) | Done |
+| 1.6 | Create `staging` branch | Done |
+| 1.7 | Test: push to staging → verify staging Cloud Run service | Done |
+| 1.8 | Test: push to main → verify production Cloud Run service | Done |
 
 **Exit Criteria**:
-- [ ] Push to `staging` → `encadeiateia-staging` service updated within 3 minutes
-- [ ] Push to `main` → `encadeiateia` service updated within 3 minutes
-- [ ] Both services accessible via Cloud Run URLs
-- [ ] Failed builds produce clear error in Cloud Build console
+- [x] Push to `staging` → `encadeiateia-staging` service updated within 3 minutes
+- [x] Push to `main` → `encadeiateia` service updated within 3 minutes
+- [x] Both services accessible via Cloud Run URLs
+- [x] Failed builds produce clear error in Cloud Build console
 
 ---
 
@@ -53,34 +53,34 @@ Phase 5 ░░░░░░░░░░░░░░░░░░░░░░██
 
 | # | Task | Status |
 |---|------|--------|
-| 2.1 | Create `Hero.tsx` component from `site-content.json` hero data | Not started |
-| 2.2 | Create `ServiceCard.tsx` component | Not started |
-| 2.3 | Create `ProjectCard.tsx` component | Not started |
-| 2.4 | Create `ProcessStep.tsx` component | Not started |
-| 2.5 | Create `ContactForm.tsx` with 6 fields + validation | Not started |
-| 2.6 | Rewrite `Home.tsx` — assemble all sections | Not started |
-| 2.7 | Create `Services.tsx` page (expanded service detail) | Not started |
-| 2.8 | Create `Projects.tsx` page (portfolio grid) | Not started |
-| 2.9 | Create `Process.tsx` page (timeline + FAQ) | Not started |
-| 2.10 | Create `Contact.tsx` dedicated page | Not started |
-| 2.11 | Rewrite `About.tsx` with real story | Not started |
-| 2.12 | Rewrite `Footer.tsx` (3 columns from JSON) | Not started |
-| 2.13 | Update `Layout.tsx` navigation (new pages) | Not started |
-| 2.14 | Update `routes.ts` with new routes | Not started |
-| 2.15 | Add SEO meta tags per page | Not started |
-| 2.16 | Mobile responsive testing | Not started |
-| 2.17 | Deploy to staging → review → merge to main | Not started |
+| 2.1 | Create `Hero.tsx` component from `site-content.json` hero data | Done |
+| 2.2 | Create `ServiceCard.tsx` component | Done |
+| 2.3 | Create `ProjectCard.tsx` component | Done |
+| 2.4 | Create `ProcessStep.tsx` component | Done |
+| 2.5 | Create `ContactForm.tsx` with 6 fields + validation | Done |
+| 2.6 | Rewrite `Home.tsx` — assemble all sections | Done |
+| 2.7 | Create `Services.tsx` page (expanded service detail) | Done |
+| 2.8 | Create `Projects.tsx` page (portfolio grid) | Done |
+| 2.9 | Create `Process.tsx` page (timeline + FAQ) | Done |
+| 2.10 | Create `Contact.tsx` dedicated page | Done |
+| 2.11 | Rewrite `About.tsx` with real story | Done |
+| 2.12 | Rewrite `Footer.tsx` (3 columns from JSON) | Done |
+| 2.13 | Update `Layout.tsx` navigation (new pages) | Done |
+| 2.14 | Update `routes.ts` with new routes | Done |
+| 2.15 | Add SEO meta tags per page | Done |
+| 2.16 | Mobile responsive testing | Done |
+| 2.17 | Deploy to staging → review → merge to main | Done |
 
 **Exit Criteria**:
-- [ ] All 6 navigation items work (Home, Services, Projects, Process, About, Contact)
-- [ ] Hero section shows real headline, subhead, 2 CTAs
-- [ ] 5 service blocks render with icons, deliverables, outcomes
-- [ ] 5 portfolio cards render with problem/solution/result
-- [ ] 4 process steps render with timeline visualization
-- [ ] Contact form validates and shows success state on submit
-- [ ] Footer shows 3 columns with correct links
-- [ ] All pages responsive on mobile (375px+)
-- [ ] Lighthouse performance score > 90
+- [x] All 6 navigation items work (Home, Services, Projects, Process, About, Contact)
+- [x] Hero section shows real headline, subhead, 2 CTAs
+- [x] 5 service blocks render with icons, deliverables, outcomes
+- [x] 5 portfolio cards render with problem/solution/result
+- [x] 4 process steps render with timeline visualization
+- [x] Contact form validates and shows success state on submit
+- [x] Footer shows 3 columns with correct links
+- [x] All pages responsive on mobile (375px+)
+- [x] Lighthouse performance score > 90
 
 ---
 

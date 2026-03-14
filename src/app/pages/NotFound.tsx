@@ -1,7 +1,9 @@
 import { Link } from "react-router";
 import { Home, Search } from "lucide-react";
+import { usePageTitle } from "@/app/hooks/usePageTitle";
 
 export function NotFound() {
+  usePageTitle("Page Not Found");
   return (
     <div className="w-full min-h-screen flex items-center justify-center px-4">
       <div className="text-center max-w-2xl">

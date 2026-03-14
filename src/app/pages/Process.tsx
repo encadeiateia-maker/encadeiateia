@@ -1,8 +1,10 @@
 import { Link } from "react-router";
 import { ArrowRight, Clock } from "lucide-react";
 import content from "@/content/site-content.json";
+import { usePageTitle } from "@/app/hooks/usePageTitle";
 
 export function Process() {
+  usePageTitle("How Projects Run");
   return (
     <div className="w-full">
       {/* Header */}
