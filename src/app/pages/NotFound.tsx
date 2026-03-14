@@ -31,11 +31,11 @@ export function NotFound() {
             Back to Home
           </Link>
           <Link
-            to="/blog"
+            to="/services"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-800/50 border border-slate-700 text-white rounded-lg font-semibold hover:bg-slate-700/50 transition-all"
           >
             <Search className="size-5" />
-            Browse Blog
+            Browse Services
           </Link>
         </div>
 
@@ -44,29 +44,29 @@ export function NotFound() {
           <p className="text-slate-400 mb-4">Quick Links</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
+              to="/services"
+              className="text-cyan-400 hover:text-cyan-300 transition-colors"
+            >
+              Services
+            </Link>
+            <Link
+              to="/projects"
+              className="text-cyan-400 hover:text-cyan-300 transition-colors"
+            >
+              Projects
+            </Link>
+            <Link
               to="/about"
               className="text-cyan-400 hover:text-cyan-300 transition-colors"
             >
-              About Us
+              About
             </Link>
             <Link
-              to="/showcase"
-              className="text-cyan-400 hover:text-cyan-300 transition-colors"
-            >
-              Showcase
-            </Link>
-            <Link
-              to="/blog"
-              className="text-cyan-400 hover:text-cyan-300 transition-colors"
-            >
-              Blog
-            </Link>
-            <a
-              href="/#contact"
+              to="/contact"
               className="text-cyan-400 hover:text-cyan-300 transition-colors"
             >
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       </div>

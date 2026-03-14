@@ -1,6 +1,7 @@
 import { Outlet, Link, useLocation } from "react-router";
 import { Menu, X, Sparkles } from "lucide-react";
 import { useState } from "react";
+import content from "@/content/site-content.json";
 
 export function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -8,9 +9,10 @@ export function Layout() {
 
   const navigation = [
     { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "Projects", href: "/projects" },
+    { name: "Process", href: "/process" },
     { name: "About", href: "/about" },
-    { name: "Showcase", href: "/showcase" },
-    { name: "Blog", href: "/blog" },
   ];
 
   const isActive = (href: string) => {
@@ -60,14 +62,10 @@ export function Layout() {
                 </Link>
               ))}
               <Link
-                to="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-                }}
+                to="/contact"
                 className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-lg text-sm hover:shadow-lg hover:shadow-cyan-500/50 transition-all"
               >
-                Contact Us
+                Contact
               </Link>
             </div>
 
@@ -104,15 +102,11 @@ export function Layout() {
                 </Link>
               ))}
               <Link
-                to="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setMobileMenuOpen(false);
-                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-                }}
+                to="/contact"
+                onClick={() => setMobileMenuOpen(false)}
                 className="block px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-lg text-sm text-center"
               >
-                Contact Us
+                Contact
               </Link>
             </div>
           </div>
@@ -128,7 +122,8 @@ export function Layout() {
       <footer className="bg-slate-950 border-t border-slate-800 mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="col-span-1 md:col-span-2">
+            {/* Brand */}
+            <div className="col-span-1">
               <div className="flex items-center gap-2 mb-4">
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg blur-lg opacity-75"></div>
@@ -141,46 +136,68 @@ export function Layout() {
                 </span>
               </div>
               <p className="text-slate-400 text-sm max-w-md">
-                Cutting-edge AI, automation, and app builder solutions based in
-                Lisbon, Portugal. Transforming businesses with intelligent
-                software services.
+                {content.footer.tagline}
               </p>
             </div>
 
-            <div>
-              <h3 className="text-white font-semibold mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                {navigation.map((item) => (
-                  <li key={item.name}>
-                    <Link
-                      to={item.href}
-                      className="text-slate-400 hover:text-cyan-400 text-sm transition-colors"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-white font-semibold mb-4">Contact</h3>
-              <ul className="space-y-2 text-sm text-slate-400">
-                <li>Lisbon, Portugal</li>
-                <li>info@encadeiateia.com</li>
-                <li>+351 123 456 789</li>
-              </ul>
-            </div>
+            {/* Footer Columns */}
+            {content.footer.columns.map((column) => (
+              <div key={column.heading}>
+                <h3 className="text-white font-semibold mb-4">{column.heading}</h3>
+                <ul className="space-y-2">
+                  {column.links.map((link) => {
+                    const href = getFooterLinkHref(link);
+                    const isExternal = href.startsWith("http") || href.startsWith("mailto:");
+                    return (
+                      <li key={link}>
+                        {isExternal ? (
+                          <a
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-slate-400 hover:text-cyan-400 text-sm transition-colors"
+                          >
+                            {link}
+                          </a>
+                        ) : (
+                          <Link
+                            to={href}
+                            className="text-slate-400 hover:text-cyan-400 text-sm transition-colors"
+                          >
+                            {link}
+                          </Link>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ))}
           </div>
 
           <div className="mt-8 pt-8 border-t border-slate-800 text-center text-sm text-slate-400">
-            <p>
-              © 2026 encadeiateia. All rights reserved. Powered by innovation in
-              Lisbon.
-            </p>
+            <p>{content.footer.bottomLine}</p>
           </div>
         </div>
       </footer>
     </div>
   );
+}
+
+function getFooterLinkHref(link: string): string {
+  const map: Record<string, string> = {
+    "Home": "/",
+    "About": "/about",
+    "Process": "/process",
+    "Contact": "/contact",
+    "Custom Web & Mobile Apps": "/services#custom-web-mobile-apps",
+    "AI & Workflow Automation": "/services#ai-workflow-automation",
+    "AI-Powered Content & Creative": "/services#ai-content-creative",
+    "Codebase Intelligence": "/services#codebase-intelligence",
+    "Lead Gen & Sales Automation": "/services#lead-gen-sales-automation",
+    "LinkedIn": "https://linkedin.com/company/encadeiateia",
+    "GitHub": "https://github.com/encadeiateia-maker",
+    "Email": "mailto:encadeiateia@gmail.com",
+  };
+  return map[link] || "/";
 }
