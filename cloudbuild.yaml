@@ -1,10 +1,19 @@
 steps:
+  # Build Docker image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/encadeiateia:$COMMIT_SHA', '.']
+    args:
+      - 'build'
+      - '-t'
+      - 'europe-west1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/encadeiateia:$COMMIT_SHA'
+      - '-t'
+      - 'europe-west1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/encadeiateia:latest'
+      - '.'
 
+  # Push all tags
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'europe-west1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/encadeiateia:$COMMIT_SHA']
+    args: ['push', '--all-tags', 'europe-west1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/encadeiateia']
 
+  # Deploy to production
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
     args:
@@ -15,6 +24,11 @@ steps:
       - '--region=europe-west1'
       - '--allow-unauthenticated'
       - '--port=8080'
+      - '--memory=256Mi'
+      - '--cpu=1'
+      - '--min-instances=0'
+      - '--max-instances=3'
 
 images:
   - 'europe-west1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/encadeiateia:$COMMIT_SHA'
+  - 'europe-west1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/encadeiateia:latest'
